@@ -9,14 +9,13 @@ class RegionFilter(abc.ABC):
 
     @abc.abstractmethod
     def filter(self, region) -> bool:
-        filter_black_and_white = RegionFilterBlackAndWhite(filter_threshold=0.5)
+        filter_black_and_white = RegionFilterBlackAndWhite()
         return filter_black_and_white.filter(region)
-        # raise NotImplementedError()
 
 class RegionFilterBlackAndWhite(RegionFilter):
 
     # binarization_threshold - percentage 
-    def __init__(self, filter_threshold, binarization_threshold = 0.85, rgb_weights=[0.2989, 0.5870, 0.1140]):
+    def __init__(self, filter_threshold=0.5, binarization_threshold=0.85, rgb_weights=[0.2989, 0.5870, 0.1140]):
         self.filter_threshold = filter_threshold
         self.binarization_threshold = binarization_threshold
         self.rgb_weights = rgb_weights
