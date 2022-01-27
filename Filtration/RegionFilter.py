@@ -1,5 +1,6 @@
 
 import abc
+import numpy as np
 
 class RegionFilter(abc.ABC):
 
@@ -8,15 +9,26 @@ class RegionFilter(abc.ABC):
 
     @abc.abstractmethod
     def filter(self, region) -> bool:
-        raise NotImplementedError()
+        filter_black_and_white = RegionFilterBlackAndWhite(filter_threshold=0.5)
+        return filter_black_and_white.filter(region)
+        # raise NotImplementedError()
 
 class RegionFilterBlackAndWhite(RegionFilter):
 
-    def __init__(self, threshold):
-        self.threshold = threshold
+    # binarization_threshold - percentage 
+    def __init__(self, filter_threshold, binarization_threshold = 0.85, rgb_weights=[0.2989, 0.5870, 0.1140]):
+        self.filter_threshold = filter_threshold
+        self.binarization_threshold = binarization_threshold
+        self.rgb_weights = rgb_weights
 
     def filter(self, region) -> bool:
-        raise NotImplementedError()
+        greyscale_image = self.convert_to_greyscale(region)
+        binary_image = np.where(greyscale_image > self.binarization_threshold*255, 1, 0)
+        return np.mean(binary_image) < self.filter_threshold
+
+    def convert_to_greyscale(self, region):
+        return np.uint8(np.dot(region[...,:3], self.rgb_weights))
+
 
 class RegionFilterHSV(RegionFilter):
 
