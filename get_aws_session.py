@@ -1,5 +1,5 @@
 import boto3
-from osgeo import gdal
+# from osgeo import gdal
 import os
 import re
 import sys
@@ -19,10 +19,10 @@ def aws_session(aws_access_key_id, aws_secret_access_key, aws_session_token):
                             aws_secret_access_key=aws_secret_access_key,
                             aws_session_token=aws_session_token)
 
-    gdal.SetConfigOption("AWS_ACCESS_KEY_ID", aws_access_key_id)
-    gdal.SetConfigOption("AWS_SECRET_ACCESS_KEY", aws_secret_access_key)
-    gdal.SetConfigOption("AWS_SESSION_TOKEN", aws_session_token)
-    gdal.SetConfigOption('AWS_REGION', region_name)
+    # gdal.SetConfigOption("AWS_ACCESS_KEY_ID", aws_access_key_id)
+    # gdal.SetConfigOption("AWS_SECRET_ACCESS_KEY", aws_secret_access_key)
+    # gdal.SetConfigOption("AWS_SESSION_TOKEN", aws_session_token)
+    # gdal.SetConfigOption('AWS_REGION', region_name)
 
     return session, s3_client
 
@@ -47,4 +47,3 @@ def get_s3_resource():
                 aws_session_token = split[1]
 
     return aws_session(aws_access_key_id, aws_secret_access_key, aws_session_token)
-

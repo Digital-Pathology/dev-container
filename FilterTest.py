@@ -3,7 +3,7 @@ import os
 import cv2
 from RegionFilter import *
 
-test_dir = 'Filtration/test_images'
+test_dir = 'test_images'
 test_files = os.listdir(test_dir)
 
 labels = None
