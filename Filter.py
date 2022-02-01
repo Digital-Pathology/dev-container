@@ -3,8 +3,7 @@ import abc
 import numpy as np
 import cv2
 
-    
-class RegionFilter(abc.ABC):
+class Filter(abc.ABC):
 
     def __call__(self, region) -> bool:
         return self.filter(region)
@@ -13,7 +12,7 @@ class RegionFilter(abc.ABC):
     def filter(self, region) -> bool:
         pass
 
-class RegionFilterBlackAndWhite(RegionFilter):
+class FilterBlackAndWhite(Filter):
 
     def __init__(self, filter_threshold=0.5, binarization_threshold=0.85, rgb_weights=[0.2989, 0.5870, 0.1140]):
         self.filter_threshold = filter_threshold
@@ -30,15 +29,15 @@ class RegionFilterBlackAndWhite(RegionFilter):
     def convert_rgb_to_greyscale(self, region):
         return np.uint8(np.dot(region[...,:3], self.rgb_weights))
 
-class RegionFilterHSV(RegionFilter):
+class FilterHSV(Filter):
 
-    # def __init__(self):
-    #     pass
+    def __init__(self, threshold) -> None:
+        self.threshold = threshold
 
     def filter(self, region) -> bool:
         hsv_img = self.convert_rgb_to_hsv(region)
         hue = hsv_img[:,:,0]
-        return np.mean(hue) > 100
+        return np.mean(hue) > self.threshold
 
     def convert_rgb_to_hsv(self, region):
         return cv2.cvtColor(region, cv2.COLOR_RGB2HSV)
