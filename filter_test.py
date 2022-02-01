@@ -14,6 +14,7 @@ def test_filter(img):
     hsv_filter: RegionFilter = RegionFilterHSV()
     return black_and_white_filter(img) and hsv_filter(img)
 
+
 if __name__ == "__main__":
     for image in os.listdir(test_dir):
         path = f'{test_dir}/{image}'

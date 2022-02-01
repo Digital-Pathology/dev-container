@@ -4,20 +4,21 @@ import os
 import re
 import sys
 
+
 def aws_session(aws_access_key_id, aws_secret_access_key, aws_session_token):
 
-    region_name='us-east-1'
+    region_name = 'us-east-1'
 
-    session = boto3.Session( 
-            aws_access_key_id=aws_access_key_id, 
-            aws_secret_access_key=aws_secret_access_key,
-            aws_session_token=aws_session_token,
-            region_name=region_name)
+    session = boto3.Session(
+        aws_access_key_id=aws_access_key_id,
+        aws_secret_access_key=aws_secret_access_key,
+        aws_session_token=aws_session_token,
+        region_name=region_name)
 
     s3_client = boto3.client('s3',
-                            aws_access_key_id=aws_access_key_id,
-                            aws_secret_access_key=aws_secret_access_key,
-                            aws_session_token=aws_session_token)
+                             aws_access_key_id=aws_access_key_id,
+                             aws_secret_access_key=aws_secret_access_key,
+                             aws_session_token=aws_session_token)
 
     # gdal.SetConfigOption("AWS_ACCESS_KEY_ID", aws_access_key_id)
     # gdal.SetConfigOption("AWS_SECRET_ACCESS_KEY", aws_secret_access_key)
@@ -26,8 +27,9 @@ def aws_session(aws_access_key_id, aws_secret_access_key, aws_session_token):
 
     return session, s3_client
 
+
 def get_s3_resource():
-    
+
     aws_config_path = os.path.abspath('AWSConfig')
     aws_credentials_path = os.path.join(aws_config_path, 'credentials')
 

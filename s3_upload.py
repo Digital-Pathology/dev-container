@@ -2,6 +2,7 @@ from botocore.exceptions import ClientError
 from botocore.exceptions import NoCredentialsError
 import logging
 
+
 def upload_file_to_s3(file_name, s3_client):
     """Upload a file to an S3 bucket
 
@@ -14,7 +15,8 @@ def upload_file_to_s3(file_name, s3_client):
 
     # Upload the file
     try:
-        s3_client.upload_file(Filename=f'local_images/{file_name}', Bucket='digpath-data', Key=f'{folder}/{file_name}')
+        s3_client.upload_file(
+            Filename=f'local_images/{file_name}', Bucket='digpath-data', Key=f'{folder}/{file_name}')
         print(file_name, "uploaded successfully")
     except ClientError as e:
         logging.error(e)

@@ -3,6 +3,9 @@ import abc
 import numpy as np
 import cv2
 
+# TODO: Add docstrings to all classes, methods, and top of each file
+
+
 class Filter(abc.ABC):
 
     def __call__(self, region) -> bool:
@@ -11,6 +14,7 @@ class Filter(abc.ABC):
     @abc.abstractmethod
     def filter(self, region) -> bool:
         pass
+
 
 class FilterBlackAndWhite(Filter):
 
@@ -22,12 +26,14 @@ class FilterBlackAndWhite(Filter):
     def filter(self, region) -> bool:
         greyscale_image = self.convert_rgb_to_greyscale(region)
         # if pixel is > 85% white, set value to 1 else 0
-        binary_image = np.where(greyscale_image > self.binarization_threshold*255, 1, 0)
+        binary_image = np.where(
+            greyscale_image > self.binarization_threshold*255, 1, 0)
         # return True if average of binary image is less than 50% white
         return np.mean(binary_image) < self.filter_threshold
 
     def convert_rgb_to_greyscale(self, region):
-        return np.uint8(np.dot(region[...,:3], self.rgb_weights))
+        return np.uint8(np.dot(region[..., :3], self.rgb_weights))
+
 
 class FilterHSV(Filter):
 
@@ -36,7 +42,7 @@ class FilterHSV(Filter):
 
     def filter(self, region) -> bool:
         hsv_img = self.convert_rgb_to_hsv(region)
-        hue = hsv_img[:,:,0]
+        hue = hsv_img[:, :, 0]
         return np.mean(hue) > self.threshold
 
     def convert_rgb_to_hsv(self, region):

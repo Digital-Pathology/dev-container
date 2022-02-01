@@ -1,6 +1,7 @@
 import re
 import os
 
+
 def download_file_from_s3(image_folder, bucket, s3_client):
     """Download a file from a folder in an S3 bucket
     :param image_folder: folder containing preprocessed images for a whole image
