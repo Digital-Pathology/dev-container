@@ -1,7 +1,7 @@
 from cgi import test
 import os
 import cv2
-from RegionFilter import *
+from Filter import *
 
 test_dir = 'test_images'
 test_files = os.listdir(test_dir)
@@ -10,8 +10,8 @@ labels = None
 
 
 def test_filter(img):
-    black_and_white_filter: RegionFilter = RegionFilterBlackAndWhite()
-    hsv_filter: RegionFilter = RegionFilterHSV()
+    black_and_white_filter: Filter = FilterBlackAndWhite()
+    hsv_filter: Filter = FilterHSV()
     return black_and_white_filter(img) and hsv_filter(img)
 
 

@@ -28,10 +28,13 @@ def aws_session(aws_access_key_id, aws_secret_access_key, aws_session_token):
     return session, s3_client
 
 
-def get_s3_resource():
+def get_s3_resource(aws_credentials_path):
 
-    aws_config_path = os.path.abspath('AWSConfig')
-    aws_credentials_path = os.path.join(aws_config_path, 'credentials')
+    # aws_config_path = os.path.abspath('AWSConfig')
+    # aws_credentials_path = os.path.join(aws_config_path, 'credentials')
+
+    if not os.path.isfile(aws_credentials_path):
+        raise FileNotFoundError
 
     if aws_credentials_path not in sys.path:
         sys.path.append(aws_credentials_path)
