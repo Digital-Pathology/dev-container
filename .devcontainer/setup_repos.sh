@@ -17,9 +17,20 @@ clone_repo(){
         goto "dev-container/${1}"
         git remote set-url origin "git@github.com:Digital-Pathology/${1}.git"
     fi
+    
+    if [[ -f "/workspaces/dev-container/${1}/environment.yml" ]]; then
+        conda env update --file "/workspaces/dev-container/${1}/environment.yml"
+    fi
+
+    if [[ -f "/workspaces/dev-container/${1}/requirements.txt" ]]; then
+        pip install -r "/workspaces/dev-container/${1}/requirements.txt";
+    fi
 }
 
 . ./.devcontainer/credentials
+
+cp /tmp/.zshrc /home/vscode/
+cp /tmp/.bashrc /home/vscode/
 
 clone_repo UnifiedImageReader main
 clone_repo WebApp main
