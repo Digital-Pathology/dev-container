@@ -1,7 +1,7 @@
 from cgi import test
 import os
 import cv2
-from Filter import *
+from filter import *
 
 test_dir = 'test_images'
 test_files = os.listdir(test_dir)

@@ -3,12 +3,12 @@ from functools import reduce
 from typing import Union
 
 import numpy as np
-from . import filter
+from .filter import Filter
 
 
 class FilterManager:
 
-    def __init__(self, filters: Union[filter.Filter, str, list]):
+    def __init__(self, filters: Union[Filter, str, list]):
 
         self.filters = []
         if isinstance(filters, list):
@@ -17,10 +17,10 @@ class FilterManager:
         else:
             self.add_filter(filters)
 
-    def add_filter(self, filter: Union[filter.Filter, str]):
+    def add_filter(self, filter: Union[Filter, str]):
         filter_classes = {
-            f.__name__: f for f in filter.Filter.__subclasses__()}
-        if isinstance(filter, filter.Filter):
+            f.__name__: f for f in Filter.__subclasses__()}
+        if isinstance(filter, Filter):
             pass
         elif isinstance(filter, str):  # string should match name of class
             if filter not in filter_classes:
