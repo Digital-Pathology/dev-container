@@ -5,11 +5,14 @@ import cv2
 
 # TODO: Add docstrings to all classes, methods, and top of each file
 
-
 class Filter(abc.ABC):
 
     def __call__(self, region) -> bool:
         return self.filter(region)
+
+    @abc.abstractmethod
+    def __str__(self):
+        pass
 
     @abc.abstractmethod
     def filter(self, region) -> bool:
@@ -22,6 +25,16 @@ class FilterBlackAndWhite(Filter):
         self.filter_threshold = filter_threshold
         self.binarization_threshold = binarization_threshold
         self.rgb_weights = rgb_weights
+    
+    def __str__(self):
+        s = "FilterBlackAndWhite: {"
+        s += f"filter_threshold:{self.filter_threshold}"
+        s += " "
+        s += f"binarization_threshold:{self.binarization_threshold}"
+        s += " "
+        s += f"rgb_weights:{self.rgb_weights}"
+        s += "}"
+        return s
 
     def filter(self, region) -> bool:
         greyscale_image = self.convert_rgb_to_greyscale(region)
@@ -37,8 +50,14 @@ class FilterBlackAndWhite(Filter):
 
 class FilterHSV(Filter):
 
-    def __init__(self, threshold) -> None:
+    def __init__(self, threshold=100) -> None:
         self.threshold = threshold
+    
+    def __str__(self):
+        s = "FilterBlackAndWhite: {"
+        s += f"threshold:{self.threshold}"
+        s += "}"
+        return s
 
     def filter(self, region) -> bool:
         hsv_img = self.convert_rgb_to_hsv(region)
