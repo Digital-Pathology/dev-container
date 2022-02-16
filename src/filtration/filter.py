@@ -73,7 +73,7 @@ class FilterHSV(Filter):
 
     def __init__(self, threshold=100) -> None:
         """
-            Initialize FilterBlackAndWhite Object
+            Initialize FilterHSV Object
             Parameters:
                 threshold: Threshold at which image region passes HSV filter
         """
