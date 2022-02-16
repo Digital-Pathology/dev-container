@@ -11,8 +11,6 @@ RUN if [ "${NODE_VERSION}" != "none" ]; then su vscode -c "umask 0002 && . /usr/
 COPY environment.yml* .devcontainer/noop.txt /tmp/conda-tmp/
 COPY .devcontainer/.zshrc /tmp
 COPY .devcontainer/.bashrc /tmp
-RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bin/conda env update -n base -f /tmp/conda-tmp/environment.yml; fi \
-    && rm -rf /tmp/conda-tmp
 
 # [Optional] Uncomment to install a different version of Python than the default
 # RUN conda install -y python=3.6 \

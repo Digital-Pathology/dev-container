@@ -32,6 +32,8 @@ clone_repo(){
 cp /tmp/.zshrc /home/vscode/
 cp /tmp/.bashrc /home/vscode/
 
+conda env update --file /workspaces/dev-container/environment.yml
+
 clone_repo UnifiedImageReader main
 clone_repo WebApp main
 clone_repo ModelManager main
