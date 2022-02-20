@@ -1,3 +1,9 @@
 
-from .filter import Filter
 from .filter_manager import FilterManager
+
+from .filter import \
+    Filter, \
+    FilterBlackAndWhite, \
+    FilterHSV, \
+    FilterRandom
+
