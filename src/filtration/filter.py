@@ -41,7 +41,7 @@ class FilterBlackAndWhite(Filter):
             Parameters:
                 region (np.ndarray): numpy array representing the region
             Returns:
-                True if the average of the binary region is less than x% white (x is the filter_threshold*100), else False
+                True if the average of the binary region is less than the filter threshold, else False
         """
         greyscale_image = self.convert_rgb_to_greyscale(region)
         # if pixel is > 85% white, set value to 1 else 0
