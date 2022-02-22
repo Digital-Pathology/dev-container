@@ -42,3 +42,4 @@ clone_repo CustomDataset main
 clone_repo ML-Supervised main
 clone_repo ML-Unsupervised main
 clone_repo PublicDatasetMaterial main
+clone_repo SagemakerTemplate main
