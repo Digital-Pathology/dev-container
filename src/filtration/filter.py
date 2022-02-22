@@ -1,7 +1,9 @@
 
 import abc
-import numpy as np
 import cv2
+from numbers import Number
+import numpy as np
+import random
 
 # TODO: Add docstrings to all classes, methods, and top of each file
 
@@ -10,9 +12,8 @@ class Filter(abc.ABC):
     def __call__(self, region) -> bool:
         return self.filter(region)
 
-    @abc.abstractmethod
     def __str__(self):
-        pass
+        return f"<{self.__class__.__name__}: {vars(self)}>"
 
     @abc.abstractmethod
     def filter(self, region) -> bool:
@@ -33,16 +34,6 @@ class FilterBlackAndWhite(Filter):
         self.filter_threshold = filter_threshold
         self.binarization_threshold = binarization_threshold
         self.rgb_weights = rgb_weights
-    
-    def __str__(self):
-        s = "FilterBlackAndWhite: {"
-        s += f"filter_threshold:{self.filter_threshold}"
-        s += " "
-        s += f"binarization_threshold:{self.binarization_threshold}"
-        s += " "
-        s += f"rgb_weights:{self.rgb_weights}"
-        s += "}"
-        return s
 
     def filter(self, region) -> bool:
         """
@@ -78,12 +69,6 @@ class FilterHSV(Filter):
                 threshold: Threshold at which image region passes HSV filter
         """
         self.threshold = threshold
-    
-    def __str__(self):
-        s = "FilterBlackAndWhite: {"
-        s += f"threshold:{self.threshold}"
-        s += "}"
-        return s
 
     def filter(self, region) -> bool:
         """
@@ -106,3 +91,12 @@ class FilterHSV(Filter):
                 np.ndarray: a numpy array representing the region, region consists of HSV values
         """
         return cv2.cvtColor(region, cv2.COLOR_RGB2HSV)
+
+
+class FilterRandom(Filter):
+    
+    def __init__(self, p: Number = 0.5) -> None:
+        self.p = p
+    
+    def filter(self, region) -> bool:
+        return random.random() > self.p
