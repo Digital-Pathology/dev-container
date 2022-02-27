@@ -16,7 +16,7 @@ class FilterManager:
                 self.add_filter(filter)
         else:
             self.add_filter(filters)
-    
+
     def __str__(self):
         return str([str(f) for f in self.filters])
 

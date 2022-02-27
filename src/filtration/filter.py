@@ -7,6 +7,7 @@ import random
 
 # TODO: Add docstrings to all classes, methods, and top of each file
 
+
 class Filter(abc.ABC):
 
     def __call__(self, region) -> bool:
@@ -93,10 +94,50 @@ class FilterHSV(Filter):
         return cv2.cvtColor(region, cv2.COLOR_RGB2HSV)
 
 
+class FilterFocusMeasure(Filter):
+
+    def __init__(self, threshold=65) -> None:
+        self.threshold = threshold
+
+    def filter(self, region) -> bool:
+        """
+            Perform filtration to a region by determining 
+            Parameters:
+                region (np.ndarray): numpy array representing the region
+            Returns:
+                True if the focus measure is greater than the supplied threshold (image is not
+                considered blurry), else False (image is considred blurry) 
+        """
+        gray = cv2.cvtColor(region, cv2.COLOR_RGB2GRAY)
+        focus_measure = self.variance_of_laplacian(gray)
+        text = "Not Blurry"
+
+        # if the focus measure is less than the supplied threshold, then the image is considered blurry
+        if focus_measure < self.threshold:
+            text = "Blurry"
+
+        # show the image
+        # cv2.putText(region, "{}: {:.2f}".format(text, focus_measure), (10, 30),
+        # cv2.FONT_HERSHEY_SIMPLEX, 0.8, (0, 0, 255), 3)
+        # cv2.imshow("Image", region)
+        # key = cv2.waitKey(0)
+
+        return (text == "Not Blurry", focus_measure)  
+
+    def variance_of_laplacian(self, region):
+        """
+            Computes the Laplacian of the region
+            Parameters:
+                region (np.ndarray): numpy array representing the region
+            Returns:
+                The focus measure which is the variance of the Laplacian
+        """
+        return cv2.Laplacian(region, cv2.CV_64F).var()
+
 class FilterRandom(Filter):
-    
+
     def __init__(self, p: Number = 0.5) -> None:
         self.p = p
-    
+
     def filter(self, region) -> bool:
         return random.random() > self.p

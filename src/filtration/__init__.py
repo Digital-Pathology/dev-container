@@ -5,5 +5,5 @@ from .filter import \
     Filter, \
     FilterBlackAndWhite, \
     FilterHSV, \
+    FilterFocusMeasure, \
     FilterRandom
-
