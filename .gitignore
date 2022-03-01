@@ -3,6 +3,7 @@
 # Don't ignore the git files
 !.gitattributes
 !.gitignore
+!.gitmodules
 !environment.yml
 !README.md
 # Don't ignore the devcontainer
