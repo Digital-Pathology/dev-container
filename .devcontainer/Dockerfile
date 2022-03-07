@@ -16,5 +16,10 @@ RUN if [ -f "/tmp/conda-tmp/environment.yml" ]; then umask 0002 && /opt/conda/bi
 RUN apt-get update \
     && apt-get -y install python3-opencv
 
+RUN pip install opencv-python
+RUN pip install coverage
+RUN pip install tox
+
+
 # COPY ../requirements.txt /tmp
 # RUN pip install -r /tmp/requirements.txt

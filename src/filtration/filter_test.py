@@ -1,4 +1,3 @@
-from cgi import test
 import os
 import cv2
 from filter import *
@@ -15,9 +14,11 @@ def test_filter(img):
     focus_measure_filter: Filter = FilterFocusMeasure()
     return black_and_white_filter(img) and hsv_filter(img) and focus_measure_filter(img)[0]
 
+
 def test_lens_filter(img):
     focus_measure_filter: Filter = FilterFocusMeasure()
     return focus_measure_filter(img)[1]
+
 
 if __name__ == "__main__":
     for image in os.listdir(test_dir):

@@ -83,7 +83,7 @@ class FilterHSV(Filter):
         hue = hsv_img[:, :, 0]
         return np.mean(hue) > self.threshold
 
-    def convert_rgb_to_hsv(self, region):
+    def convert_rgb_to_hsv(self, region) -> np.ndarray:
         """
             Converts RGB region of image to HSV
             Parameters:
@@ -101,7 +101,7 @@ class FilterFocusMeasure(Filter):
 
     def filter(self, region) -> bool:
         """
-            Perform filtration to a region by determining 
+            Perform filtration to a region by determining
             Parameters:
                 region (np.ndarray): numpy array representing the region
             Returns:
@@ -122,9 +122,9 @@ class FilterFocusMeasure(Filter):
         # cv2.imshow("Image", region)
         # key = cv2.waitKey(0)
 
-        return (text == "Not Blurry", focus_measure)  
+        return text == "Not Blurry"
 
-    def variance_of_laplacian(self, region):
+    def variance_of_laplacian(self, region) -> float:
         """
             Computes the Laplacian of the region
             Parameters:
@@ -133,6 +133,7 @@ class FilterFocusMeasure(Filter):
                 The focus measure which is the variance of the Laplacian
         """
         return cv2.Laplacian(region, cv2.CV_64F).var()
+
 
 class FilterRandom(Filter):
 
