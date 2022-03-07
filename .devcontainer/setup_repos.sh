@@ -47,3 +47,4 @@ pip_install_editable CustomDataset
 pip_install_editable Filtration
 pip_install_editable ModelManager
 pip_install_editable UnifiedImageReader
+pip_install_editable WebApp/ModelManagerForWebApp
