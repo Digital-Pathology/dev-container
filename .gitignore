@@ -1,11 +1,13 @@
-UnifiedImageReader
-WebApp
-ModelManager
-Filtration
-CustomDataset
-ML-Supervised
-ML-Unsupervised
-PublicDatasetMaterial
-credentials
-test_images*
-SagemakerTemplate
+
+# Ignore everything
+*
+# Don't ignore the git files
+!.gitattributes
+!.gitignore
+!.gitmodules
+!environment.yml
+!README.md
+# Don't ignore the devcontainer
+!.devcontainer
+# Ignore the user's credentials
+.devcontainer/credentials

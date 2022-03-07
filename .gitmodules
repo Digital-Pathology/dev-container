@@ -1,0 +1,32 @@
+[submodule "CustomDataset"]
+    path = ./CustomDataset
+    url = dummy
+
+[submodule "Filtration"]
+    path = ./Filtration
+    url = dummy
+
+[submodule "ML-Supervised"]
+    path = ./ML-Supervised
+    url = dummy
+
+[submodule "ML-Unsupervised"]
+    path = ./ML-Unsupervised
+    url = dummy
+
+[submodule "ModelManager"]
+    path = ./ModelManager
+    url = dummy
+
+[submodule "PublicDatasetMaterial"]
+    path = ./PublicDatasetMaterial
+    url = dummy
+
+[submodule "UnifiedImageReader"]
+    path = ./UnifiedImageReader
+    url = dummy
+
+[submodule "WebApp"]
+    path = ./WebApp
+    url = dummy
+
