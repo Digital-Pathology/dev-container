@@ -117,3 +117,4 @@ fi
 unset __conda_setup
 # <<< conda initialize <<<
 
+export PATH="/workspaces/dev-container/SagemakerTemplate/scripts:$PATH"

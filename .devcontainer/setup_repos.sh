@@ -40,6 +40,7 @@ clone_repo ML-Supervised main
 clone_repo ML-Unsupervised main
 clone_repo ModelManager main
 clone_repo PublicDatasetMaterial main
+clone_repo SagemakerTemplate main
 clone_repo UnifiedImageReader main
 clone_repo WebApp main
 
