@@ -17,8 +17,11 @@ RUN apt-get update \
     && apt-get -y install python3-opencv
 
 RUN pip install opencv-python
-RUN pip install coverage
+RUN pip install pytest-cov
 RUN pip install tox
+RUN pip install mypy
+RUN pip install pytest
+RUN pip install flake8
 
 
 # COPY ../requirements.txt /tmp

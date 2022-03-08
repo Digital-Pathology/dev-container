@@ -1,6 +1,6 @@
 import os
 import cv2
-from filter import *
+from filter import FilterBlackAndWhite, FilterHSV, FilterFocusMeasure
 
 test_dir = 'test_images'
 test_files = os.listdir(test_dir)
