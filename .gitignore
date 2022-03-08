@@ -1,4 +1,3 @@
-/tests/test_images
 *.pyc
 *.egg-info
 /.tox

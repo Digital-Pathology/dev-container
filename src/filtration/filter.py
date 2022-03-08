@@ -110,11 +110,10 @@ class FilterFocusMeasure(Filter):
         """
         gray = cv2.cvtColor(region, cv2.COLOR_RGB2GRAY)
         focus_measure = self.variance_of_laplacian(gray)
-        text = "Not Blurry"
 
         # if the focus measure is less than the supplied threshold, then the image is considered blurry
         if focus_measure < self.threshold:
-            text = "Blurry"
+            return False
 
         # show the image
         # cv2.putText(region, "{}: {:.2f}".format(text, focus_measure), (10, 30),
@@ -122,7 +121,7 @@ class FilterFocusMeasure(Filter):
         # cv2.imshow("Image", region)
         # key = cv2.waitKey(0)
 
-        return text == "Not Blurry"
+        return True
 
     def variance_of_laplacian(self, region) -> float:
         """
