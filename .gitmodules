@@ -30,3 +30,6 @@
     path = ./WebApp
     url = dummy
 
+[submodule "SagemakerTemplate"]
+    path = ./SagemakerTemplate
+    url = dummy
