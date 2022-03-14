@@ -7,7 +7,6 @@
 !.gitmodules
 !environment.yml
 !README.md
-!supervised_push.sh
 # Don't ignore the devcontainer
 !.devcontainer
 # Ignore the user's credentials
