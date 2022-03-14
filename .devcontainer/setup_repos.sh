@@ -44,8 +44,8 @@ clone_repo SagemakerTemplate main
 clone_repo UnifiedImageReader main
 clone_repo WebApp main
 
-pip_install_editable CustomDataset
+pip_install_editable UnifiedImageReader
 pip_install_editable Filtration
 pip_install_editable ModelManager
-pip_install_editable UnifiedImageReader
 pip_install_editable WebApp/ModelManagerForWebApp
+pip_install_editable CustomDataset
