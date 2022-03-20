@@ -43,6 +43,7 @@ clone_repo PublicDatasetMaterial main
 clone_repo SagemakerTemplate main
 clone_repo UnifiedImageReader main
 clone_repo WebApp main
+clone_repo AWS-Utils main
 
 pip_install_editable UnifiedImageReader
 pip_install_editable Filtration

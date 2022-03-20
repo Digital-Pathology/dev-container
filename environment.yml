@@ -1,14 +1,15 @@
 name: base
 channels:
   - pytorch
-  - conda-forge
   - anaconda
+  - conda-forge
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
   - _openmp_mutex=4.5=1_gnu
   - backcall=0.2.0=pyhd3eb1b0_0
   - blas=1.0=mkl
+  - blosc=1.21.0=h8c45485_0
   - boost-cpp=1.70.0=ha2d47e9_1
   - boto3=1.18.21=pyhd3eb1b0_0
   - botocore=1.21.41=pyhd3eb1b0_1
@@ -17,7 +18,7 @@ dependencies:
   - brotlipy=0.7.0=py39h27cfd23_1003
   - bzip2=1.0.8=h7b6447c_0
   - c-ares=1.18.1=h7f8727e_0
-  - ca-certificates=2020.10.14=0
+  - ca-certificates=2022.2.1=h06a4308_0
   - cairo=1.16.0=hf32fb01_1
   - certifi=2021.10.8=py39h06a4308_2
   - cffi=1.14.6=py39h400218f_0
@@ -100,6 +101,7 @@ dependencies:
   - libxcb=1.14=h7b6447c_0
   - libxml2=2.9.12=h03d6c58_0
   - lz4-c=1.9.3=h295c915_1
+  - lzo=2.10=h7b6447c_2
   - matplotlib=3.5.0=py39h06a4308_0
   - matplotlib-base=3.5.0=py39h3ed280b_0
   - matplotlib-inline=0.1.2=pyhd3eb1b0_2
@@ -107,6 +109,7 @@ dependencies:
   - mkl-service=2.4.0=py39h7f8727e_0
   - mkl_fft=1.3.1=py39hd3c417c_0
   - mkl_random=1.2.2=py39h51133e4_0
+  - mock=4.0.3=pyhd3eb1b0_0
   - munkres=1.1.4=py_0
   - ncurses=6.3=h7f8727e_2
   - nest-asyncio=1.5.1=pyhd3eb1b0_0
@@ -139,6 +142,7 @@ dependencies:
   - pyparsing=3.0.4=pyhd3eb1b0_0
   - pyqt=5.9.2=py39h2531618_6
   - pysocks=1.7.1=py39h06a4308_0
+  - pytables=3.6.1=py39h77479fe_1
   - python=3.9.7=h12debd9_1
   - python-dateutil=2.8.2=pyhd3eb1b0_0
   - python_abi=3.9=2_cp39
@@ -174,27 +178,43 @@ dependencies:
   - zlib=1.2.11=h7f8727e_4
   - zstd=1.4.9=haebb681_0
   - pip:
+    - albumentations==1.1.0
     - asgiref==3.5.0
     - astroid==2.9.3
     - click==8.0.3
     - colorama==0.4.4
+    - dill==0.3.4
     - dnspython==2.2.0
     - dominate==2.6.0
     - email-validator==1.1.3
     - flask==2.0.2
     - flask-bootstrap==3.3.7.1
     - flask-wtf==1.0.0
+    - imageio==2.16.1
     - isort==5.10.1
     - itsdangerous==2.0.1
     - jinja2==3.0.3
+    - joblib==1.1.0
     - lazy-object-proxy==1.7.1
     - markupsafe==2.0.1
     - mccabe==0.6.1
+    - networkx==2.7.1
     - opencv-python==4.5.5.62
+    - opencv-python-headless==4.5.5.64
     - pip==21.3.1
     - platformdirs==2.4.1
     - pylint==2.12.2
     - python-dotenv==0.19.2
+    - pyvips==2.1.16
+    - pywavelets==1.3.0
+    - pyyaml==6.0
+    - qudida==0.0.4
+    - scikit-image==0.19.2
+    - scikit-learn==1.0.2
+    - scipy==1.8.0
+    - slideio==0.6.1
+    - threadpoolctl==3.1.0
+    - tifffile==2022.2.9
     - toml==0.10.2
     - visitor==0.1.3
     - werkzeug==2.0.2
