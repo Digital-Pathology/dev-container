@@ -26,4 +26,10 @@ COPY .devcontainer/.bashrc /tmp
 # [Optional] Uncomment this section to install additional OS packages.
 
 RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
-    && apt-get -y install --no-install-recommends python3-opencv libvips42
+    && apt-get -y install --no-install-recommends \
+        python3-opencv \
+        libvips42 \
+        dos2unix \
+        ffmpeg \
+        libsm6 \
+        libxext6
