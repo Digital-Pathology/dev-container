@@ -18,7 +18,7 @@ dependencies:
   - brotlipy=0.7.0=py39h27cfd23_1003
   - bzip2=1.0.8=h7b6447c_0
   - c-ares=1.18.1=h7f8727e_0
-  - ca-certificates=2022.2.1=h06a4308_0
+  - ca-certificates=2020.10.14=0
   - cairo=1.16.0=hf32fb01_1
   - certifi=2021.10.8=py39h06a4308_2
   - cffi=1.14.6=py39h400218f_0
@@ -201,7 +201,7 @@ dependencies:
     - networkx==2.7.1
     - opencv-python==4.5.5.62
     - opencv-python-headless==4.5.5.64
-    - pip==21.3.1
+    - pip==22.0.3
     - platformdirs==2.4.1
     - pylint==2.12.2
     - python-dotenv==0.19.2
