@@ -11,3 +11,5 @@
 !.devcontainer
 # Ignore the user's credentials
 .devcontainer/credentials
+
+InputsAndOutputs
