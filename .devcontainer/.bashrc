@@ -135,6 +135,9 @@ __bash_prompt() {
 }
 __bash_prompt
 export PROMPT_DIRTRIM=4
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+export DOCKER_BUILDKIT=0
+export COMPOSE_DOCKER_CLI_BUILD=0
 
 # >>> conda initialize >>>
 # !! Contents within this block are managed by 'conda init' !!

@@ -33,3 +33,7 @@
 [submodule "SagemakerTemplate"]
     path = ./SagemakerTemplate
     url = dummy
+
+[submodule "AWS-Utils"]
+    path = ./AWS-Utils
+    url = dummy

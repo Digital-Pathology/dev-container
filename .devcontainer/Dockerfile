@@ -1,6 +1,6 @@
 # See here for image contents: https://github.com/microsoft/vscode-dev-containers/tree/v0.217.1/containers/python-3-miniconda/.devcontainer/base.Dockerfile
 
-FROM mcr.microsoft.com/vscode/devcontainers/miniconda:0-3
+FROM --platform=linux/amd64 mcr.microsoft.com/vscode/devcontainers/miniconda:0-3
 
 # [Choice] Node.js version: none, lts/*, 16, 14, 12, 10
 ARG NODE_VERSION="none"
