@@ -1,8 +1,8 @@
 name: base
 channels:
   - pytorch
-  - anaconda
   - conda-forge
+  - anaconda
   - defaults
 dependencies:
   - _libgcc_mutex=0.1=main
@@ -11,8 +11,6 @@ dependencies:
   - blas=1.0=mkl
   - blosc=1.21.0=h8c45485_0
   - boost-cpp=1.70.0=ha2d47e9_1
-  - boto3=1.18.21=pyhd3eb1b0_0
-  - botocore=1.21.41=pyhd3eb1b0_1
   - bottleneck=1.3.2=py39hdd57654_1
   - brotli=1.0.9=he6710b0_2
   - brotlipy=0.7.0=py39h27cfd23_1003
@@ -181,6 +179,9 @@ dependencies:
     - albumentations==1.1.0
     - asgiref==3.5.0
     - astroid==2.9.3
+    - attrs==20.3.0
+    - boto3==1.21.26
+    - botocore==1.24.26
     - click==8.0.3
     - colorama==0.4.4
     - dill==0.3.4
@@ -190,7 +191,9 @@ dependencies:
     - flask==2.0.2
     - flask-bootstrap==3.3.7.1
     - flask-wtf==1.0.0
+    - google-pasta==0.2.0
     - imageio==2.16.1
+    - importlib-metadata==4.11.3
     - isort==5.10.1
     - itsdangerous==2.0.1
     - jinja2==3.0.3
@@ -198,21 +201,29 @@ dependencies:
     - lazy-object-proxy==1.7.1
     - markupsafe==2.0.1
     - mccabe==0.6.1
+    - multiprocess==0.70.12.2
     - networkx==2.7.1
     - opencv-python==4.5.5.62
     - opencv-python-headless==4.5.5.64
+    - pathos==0.2.8
     - pip==22.0.3
     - platformdirs==2.4.1
+    - pox==0.3.0
+    - ppft==1.6.6.4
+    - protobuf==3.19.4
+    - protobuf3-to-dict==0.1.5
     - pylint==2.12.2
     - python-dotenv==0.19.2
     - pyvips==2.1.16
     - pywavelets==1.3.0
     - pyyaml==6.0
     - qudida==0.0.4
+    - sagemaker==2.80.0
     - scikit-image==0.19.2
     - scikit-learn==1.0.2
     - scipy==1.8.0
     - slideio==0.6.1
+    - smdebug-rulesconfig==1.0.1
     - threadpoolctl==3.1.0
     - tifffile==2022.2.9
     - toml==0.10.2
@@ -220,4 +231,5 @@ dependencies:
     - werkzeug==2.0.2
     - wrapt==1.13.3
     - wtforms==3.0.1
+    - zipp==3.7.0
 prefix: /opt/conda
