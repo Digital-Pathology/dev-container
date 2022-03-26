@@ -41,6 +41,7 @@ clone_repo ML-Unsupervised main
 clone_repo ModelManager main
 clone_repo PublicDatasetMaterial main
 clone_repo SagemakerTemplate main
+clone_repo SagemakerNotebook main
 clone_repo UnifiedImageReader main
 clone_repo WebApp main
 clone_repo AWS-Utils main
