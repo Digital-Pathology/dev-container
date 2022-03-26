@@ -45,6 +45,7 @@
 	"features": {
 		"docker-from-docker": "20.10",
 		"git": "os-provided",
-		"sshd": "latest"
+		"sshd": "latest", 
+		"github-cli": "latest"
 	}
 }
