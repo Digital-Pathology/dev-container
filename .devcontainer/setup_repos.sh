@@ -50,3 +50,4 @@ pip_install_editable Filtration
 pip_install_editable ModelManager
 pip_install_editable WebApp/ModelManagerForWebApp
 pip_install_editable CustomDataset
+pip_install_editable AWS-Utils
