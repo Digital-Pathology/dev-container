@@ -11,3 +11,6 @@
 !.devcontainer
 # Ignore the user's credentials
 .devcontainer/credentials
+
+!.vscode
+!.vscode/restore-terminals.json

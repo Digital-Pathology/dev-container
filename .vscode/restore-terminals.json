@@ -1,0 +1,17 @@
+{
+    "artificialDelayMilliseconds": 300,
+    "keepExistingTerminalsOpen": true,
+    "runOnStartup": true,
+    "terminals": [
+        {
+            "splitTerminals": [
+                {
+                    "name": "Terminal",
+                    "commands": [
+                        "gh auth status || gh auth login"
+                    ]
+                }
+            ]
+        }
+    ]
+}
