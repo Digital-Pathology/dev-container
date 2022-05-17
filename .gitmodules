@@ -37,3 +37,7 @@
 [submodule "AWS-Utils"]
     path = ./AWS-Utils
     url = dummy
+
+[submodule "SagemakerNotebook"]
+    path = ./SagemakerNotebook
+    url = dummy
